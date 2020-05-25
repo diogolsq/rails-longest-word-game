@@ -1,0 +1,41 @@
+<h1>Longest Word-Game!</h1>
+
+<div class="card">
+<p>Welcome to the longest word-game!
+<br>
+Here is your grid:</p>
+<p><%= @mygrid%>
+<br>
+</p>
+</div>
+
+
+<div class="card">
+<p>
+<br>
+<form action="/score" method='post'>
+  <label>What is your longest word?</label>
+  <br>
+  <input type="text" name="answer" placeholder='your attempt'>
+  <input type="submit" value="play">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%=hidden_field_tag :grid, @mygrid %>
+</form>
+<br>
+</p>
+</div>
+
+
+
+<div class="card">
+<p>
+<br>
+<form action="/answer" method='get'>
+  <label>What is your longest word?</label>
+  <br>
+  <input type="text" name="question" placeholder='your attempt'>
+  <input type="submit" value="go">
+</form>
+<br>
+</p>
+</div>
